@@ -7,7 +7,6 @@ set nobackup
 set wildmenu
 set cursorline
 set nowrap
-
 set showtabline=2 
 set laststatus=2
 set autoindent
@@ -19,75 +18,42 @@ set cmdheight=2
 set splitbelow
 set undofile
 set undodir=~/.vim/undodir
-"autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-autocmd vimenter * hi NonText guifg=bg
-
 set scrolloff=8
 set path+=**
-
 if has('filetype')
   filetype indent plugin on
 endif
-
 if has('syntax')
   syntax on
 endif
 
-let mapleader = " "
-
-
-
 "Keyboard Shortcuts
-
-"nnoremap <leader>p :Vexplore<CR>
-autocmd FileType c	nnoremap <buffer> <F5> :w<bar>!clear && gcc % -o /tmp/a.out && clear && cd /tmp && clear && ./a.out<CR>
-autocmd FileType cpp	nnoremap <buffer> <F5> :w<bar>!g++ % -o /tmp/a.out && cd /tmp && clear && ./a.out && rm -rf /tmp/a.out<CR><CR>
-autocmd Filetype python	nnoremap <buffer> <F5> :w<bar>term python %<CR>
-
-
+let mapleader = " "
+autocmd FileType c	nnoremap <buffer> <leader>b :w<bar>!clear && gcc % -o /tmp/a.out && clear && cd /tmp && clear && ./a.out<CR>
+autocmd FileType cpp	nnoremap <buffer> <leader>b :w<bar>!g++ % -o /tmp/a.out && cd /tmp && clear && ./a.out && rm -rf /tmp/a.out<CR><CR>
+autocmd Filetype python	nnoremap <buffer> <leader>b :w<bar>term python %<CR>
 "To move between split-windows
 nnoremap <leader>h :wincmd h<CR> 
 nnoremap <leader>j :wincmd j<CR> 
 nnoremap <leader>k :wincmd k<CR> 
 nnoremap <leader>l :wincmd l<CR> 
-
+"For Typos
 command WQ wq
 command Wq wq
 command W w
 command Q q
-
+"Colorscheme
 hi CursorLine cterm=NONE ctermbg=238
 hi CursorLineNr term=bold ctermbg=238 ctermfg=11 cterm=NONE
-
+"For Netrw
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
-
-" reset the cursor on start (for older versions of vim, usually not required)
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
-
-"Ps = 0  -> blinking block.
-"Ps = 1  -> blinking block (default).
-"Ps = 2  -> steady block.
-"Ps = 3  -> blinking underline.
-"Ps = 4  -> steady underline.
-"Ps = 5  -> blinking bar (xterm).
-"Ps = 6  -> steady bar (xterm).
-
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 15
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore| wincmd p
-"augroup END
-
+let g:netrw_winsize = 20
 let g:NetrwIsOpen=0
-
 function! ToggleNetrw()
     if g:NetrwIsOpen
         let i = bufnr("$")
@@ -103,10 +69,9 @@ function! ToggleNetrw()
         silent Lexplore
     endif
 endfunction
-
-" Add your own mapping. For example:
 noremap <silent> <leader>p :call ToggleNetrw()<CR>
 
+""From Archcraft config
 "noh
 "syntax on
 "set t_Co=16
@@ -135,10 +100,10 @@ noremap <silent> <leader>p :call ToggleNetrw()<CR>
 "set backspace=indent,eol,start
 "set list
 "set listchars=tab:\│\ 
-"set matchpairs+=<:>
-"set statusline=%1*\ file\ %3*\ %f\ %4*\ 
-"set statusline+=%=\ 
-"set statusline+=%3*\ %l\ of\ %L\ %2*\ line\ 
+set matchpairs+=<:>
+set statusline=%1*\ file\ %3*\ %f\ %4*\ 
+set statusline+=%=\ 
+set statusline+=%3*\ %l\ of\ %L\ %2*\ line\ 
 "set scrolloff=8
 "nmap <C-S> :w<CR>
 "nmap <C-_> :noh<CR>
@@ -182,11 +147,11 @@ noremap <silent> <leader>p :call ToggleNetrw()<CR>
 "hi search ctermbg=0
 "hi statusline ctermbg=0 ctermfg=NONE
 "hi statuslinenc ctermbg=0 ctermfg=0
-"hi user1 ctermbg=1 ctermfg=0
-"hi user2 ctermbg=4 ctermfg=0
-"hi user3 ctermbg=0 ctermfg=NONE
-"hi user4 ctermbg=NONE ctermfg=NONE
-"hi group1 ctermbg=NONE ctermfg=0
+hi user1 ctermbg=1 ctermfg=0
+hi user2 ctermbg=4 ctermfg=0
+hi user3 ctermbg=0 ctermfg=NONE
+hi user4 ctermbg=NONE ctermfg=NONE
+hi group1 ctermbg=NONE ctermfg=0
 "autocmd colorscheme * hi clear cursorline
 "match group1 /\t/
 ""-------------------------------------------------------------
