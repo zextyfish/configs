@@ -35,16 +35,19 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "Keyboard Shortcuts
 let mapleader = " "
 "autocmd FileType c	nnoremap <buffer> <leader>b :w<bar>!clear && gcc % -o /tmp/a.out && clear && cd /tmp && clear && ./a.out<CR>
 autocmd FileType c	nnoremap <buffer> <leader>b :w<bar>sp<bar>wincmd j<bar>term gcc % -o /tmp/a.out && clear && cd /tmp && clear && ./a.out<CR>
-autocmd FileType cpp	nnoremap <buffer> <leader>b :w<bar>wincmd j<bar>term g++ % -o /tmp/a.out && cd /tmp && clear && ./a.out && rm -rf /tmp/a.out<CR><CR>
+autocmd FileType cp	nnoremap <buffer> <leader>b :w<bar>wincmd j<bar>term g++ % -o /tmp/a.out && cd /tmp && clear && ./a.out && rm -rf /tmp/a.out<CR><CR>
 "autocmd Filetype python	nnoremap <buffer> <leader>b :w<bar>term python %<CR>
 autocmd Filetype python	nnoremap <buffer> <leader>b :w<bar>sp<bar>wincmd j<bar>term python %<CR>
 autocmd FileType xdefaults nnoremap <buffer> <leader>b :w<bar>!xrdb -merge .Xresources<CR><CR>
+autocmd FileType octave nnoremap <buffer> <leader>B :w<bar>sp<bar>wincmd j<bar>term octave --persist %<CR>
+autocmd FileType octave nnoremap <buffer> <leader>b :w<bar>sp<bar>wincmd j<bar>term octave %<CR>
 "To move between split-windows
 nnoremap <leader>h :wincmd h<CR> 
 nnoremap <leader>j :wincmd j<CR> 
@@ -64,13 +67,14 @@ command Q q
 "For Terminal
 autocmd TermOpen * startinsert
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 set termguicolors
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord'
 
 set clipboard^=unnamedplus
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endifp
+autocmd Vimenter * hi Normal ctermbg=NONE guibg=NONE
