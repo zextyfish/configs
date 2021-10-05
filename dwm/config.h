@@ -77,6 +77,7 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
       	{ "eww",      NULL,       NULL,       0,            0,           1,           -1 },
+      	{ "Pavucontrol",      NULL,       NULL,       0,           1,           1,           -1 },
 };
 
 /* layout(s) */
@@ -121,6 +122,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
+static const char *power[] = { "powermenu", NULL };
 static const char *termcmd[]  = {  "alacritty", NULL }; // change this to your term
 static const char *rofi[] = {"rofi", "-show", "drun", "-config", "/home/void/.config/rofi/drun.rasi", NULL };
 static const char *layoutmenu_cmd = "/home/void/.dwm/layoutmenu.sh";
@@ -134,6 +136,7 @@ static Key keys[] = {
     // if you dont use st and this script my rm this and uncomment line below it!
     //{ MODKEY,                       XK_Return, spawn,   SHCMD("~/.local/bin/./st_settings && st")}, 
     { MODKEY,                       XK_Return, spawn,    {.v = termcmd }},  
+    { MODKEY,                       XK_Escape, spawn,    {.v = power }},  
 
     {MODKEY | ControlMask, XK_u, spawn, SHCMD("maim | xclip -selection clipboard -t image/png")},
     {MODKEY, XK_u, spawn,   SHCMD("maim --select | xclip -selection clipboard -t image/png")},

@@ -1,0 +1,29 @@
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Changing the Volume
+# XF86Audio{Raise,Lower}Volume
+# 	amixer set 'Master' 2%{+,-}
+# XF86AudioMute
+# 	amixer -q set Master toggle
+
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+	/usr/bin/pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo {+5%, -5%}
+
+XF86AudioMute
+	/usr/bin/pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
+
+# Screenshots
+Print
+	scrot -q 100 -z -e 'mv $f ~/Pictures/'
+super + Print
+	scrot -s -q 100 -z -e 'mv $f ~/Pictures/'
+shift + Print
+	scrot -q 100 -z -e 'xclip -selection clipboard -target image/png -i $f' && rm -rf 2021*.png
+super + shift + Print
+	scrot -s -q 100 -z -e 'xclip -selection clipboard -target image/png -i $f' && rm -rf 2021*.png
+
+End 
+	/home/void/.dwm/powermenu
+Insert
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
