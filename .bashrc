@@ -11,5 +11,6 @@ export EDITOR="nvim"
 
 alias get='doas xbps-install'
 alias seek='xbps-query -Rs'
-alias purge='doas xbps-remove -Oo'
+alias clean='doas xbps-remove -Oo'
+alias purge='doas xbps-remove -R'
 alias update='doas xbps-install -Su'

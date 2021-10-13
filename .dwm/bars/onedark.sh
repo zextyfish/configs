@@ -34,7 +34,7 @@ batt() {
 brightness() {
 
   backlight() {
-    backlight="$(xbacklight -get)"
+    backlight="$(light -G)"
     echo -e "$backlight"
   }
 
@@ -45,6 +45,12 @@ brightness() {
 mem() {
   printf "^c#7797b7^^b#1e222a^  "
   printf "^c#7797b7^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+}
+
+vol() {
+  printf "^c#7797b7^^b#1e222a^ "
+  printf "^c#7797b7^ $(pactl list sinks | grep '^[[:space:]]Volume:' | \
+    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')"
 }
 
 wlan() {
@@ -64,5 +70,5 @@ while true; do
   [ $interval == 0 ] || [ $(($interval % 3600)) == 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(update_icon) $updates $(batt) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+  sleep 1 && xsetroot -name "$(update_icon) $updates $(batt) $(brightness) $(cpu) $(mem) $(wlan) $(vol) $(clock)"
 done

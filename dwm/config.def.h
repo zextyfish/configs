@@ -126,8 +126,8 @@ static const char *power[] = { "powermenu", NULL };
 static const char *termcmd[]  = {  "alacritty", NULL }; // change this to your term
 static const char *rofi[] = {"rofi", "-show", "drun", "-config", "/home/void/.config/rofi/drun.rasi", NULL };
 static const char *layoutmenu_cmd = "/home/void/.dwm/layoutmenu.sh";
-static const char *xi[] = {"xbacklight", "-inc", "5", NULL};
-static const char *xd[] = {"xbacklight", "-dec", "5", NULL};
+static const char *xi[] = {"light", "-A", "5", NULL};
+static const char *xd[] = {"light", "-U", "5", NULL};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
