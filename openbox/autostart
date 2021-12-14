@@ -1,0 +1,31 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+hsetroot -cover configs/Wallpapers/exodus_v02_5120x2880.png &
+picom --experimental-backends &
+nm-applet &
+tint2 &
+plank &
+volctl &
+deadd-notification-center &
+redshift-gtk &
+light -I &
+greenclip daemon &
+xobstart &
+xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Tapping Enabled" 1 &
+xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Middle Emulation Enabled" 1 &
+xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Natural Scrolling Enabled" 1 &
