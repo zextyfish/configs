@@ -5,8 +5,8 @@
 # padding
 window:
   padding:
-    x: 24
-    y: 24
+    x: 16
+    y: 16
 
 # fonts
 font:
@@ -31,7 +31,7 @@ font:
 # jellybeans colors
 colors:
   primary:
-    background: '#151515'
+    background: '#262626'
     foreground: '#e8e8d3'
 
   normal:
@@ -59,3 +59,4 @@ live_config_reload: true
 # hide cursor while typing  
 mouse:
   hide_when_typing: true
+background_opacity: 0.905

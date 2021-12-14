@@ -21,18 +21,18 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 2)"
 case $chosen in
     $shutdown)
-        doas shutdown -h now
+        light -O && systemctl poweroff
         ;;
     $reboot)
-        doas reboot
+        light -O && systemctl reboot
         ;;
     $lock)
         slimlock
         ;;
     $suspend)
-        doas zzz
+	systemctl suspend
         ;;
     $logout)
-        pkill -u void
+	light -O && pkill -u Intel
         ;;
 esac

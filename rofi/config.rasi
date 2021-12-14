@@ -1,11 +1,11 @@
 configuration{
     modi: "drun";
     font: "Iosevka 12";
-    show-icons: false ;
-    icon-theme: "ePapirus";
+    show-icons: true;
+    icon-theme: "Tela circle black dark";
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
-    display-drun: "  ";
+    display-drun: "  ";
     location: 0;
 }
 
