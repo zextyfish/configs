@@ -66,6 +66,7 @@ command W w
 command Q q
 "For Terminal
 autocmd TermOpen * startinsert
+nnoremap <leader><leader> :FZF<CR>
 
 colorscheme nord
 set background=dark

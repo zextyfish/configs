@@ -15,16 +15,16 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-hsetroot -cover configs/Wallpapers/exodus_v02_5120x2880.png &
-picom --experimental-backends &
-nm-applet &
-tint2 &
-plank &
-volctl &
-deadd-notification-center &
-redshift-gtk &
+hsetroot -cover configs/Wall.png &
+pgrep -x picom > /dev/null || picom --experimental-backends &
+pgrep -x nm-applet > /dev/null || nm-applet &
+pgrep -x tint2 > /dev/null || tint2 &
+pgrep -x plank > /dev/null || plank &
+pgrep -x deadd-notification-center > /dev/null || deadd-notification-center &
+pgrep -x redshift > /dev/null || redshift-gtk &
+pgrep -x greenclip > /dev/null || greenclip daemon &
+pgrep -x lead > /dev/null || lead &
 light -I &
-greenclip daemon &
 xobstart &
 xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Tapping Enabled" 1 &
 xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Middle Emulation Enabled" 1 &

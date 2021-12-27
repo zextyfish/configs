@@ -235,6 +235,10 @@
         <to>2</to>
       </action>
     </keybind>
+    <keybind key="W-Tab">
+      <action name="DesktopNext">
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -325,22 +329,10 @@
       </action>
     </keybind>
     <keybind key="W-Up">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>100%</width>
-        <height>100%</height>
-      </action>
+      <action name="Maximize"/>
     </keybind>
     <keybind key="W-Down">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
+      <action name="Iconify"/>
     </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-0">
@@ -812,6 +804,12 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+    <application title="Unnamed Window" type="normal">
+      <desktop>2</desktop>
+      <skip_taskbar>yes</skip_taskbar>
+      <decor>no</decor>
+      <maximized>yes</maximized>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
