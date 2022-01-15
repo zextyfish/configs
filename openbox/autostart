@@ -15,7 +15,7 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-hsetroot -cover configs/Wall.png &
+hsetroot -cover dots/Wall.png &
 pgrep -x picom > /dev/null || picom --experimental-backends &
 pgrep -x nm-applet > /dev/null || nm-applet &
 pgrep -x tint2 > /dev/null || tint2 &
@@ -26,6 +26,7 @@ pgrep -x greenclip > /dev/null || greenclip daemon &
 pgrep -x lead > /dev/null || lead &
 light -I &
 xobstart &
+pgrep -x aw-qt > /dev/null || aw-qt &
 xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Tapping Enabled" 1 &
 xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Middle Emulation Enabled" 1 &
 xinput set-prop SynPS/2\ Synaptics\ TouchPad "libinput Natural Scrolling Enabled" 1 &

@@ -54,7 +54,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Roboto</name>
@@ -126,7 +126,7 @@
       <name>Home</name>
       <name>Alternate</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>500</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -703,16 +703,16 @@
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
+    <!--   <mousebind button="Up" action="Click"> -->
+    <!--     <action name="GoToDesktop"> -->
+    <!--       <to>previous</to> -->
+    <!--     </action> -->
+    <!--   </mousebind> -->
+    <!--   <mousebind button="Down" action="Click"> -->
+    <!--     <action name="GoToDesktop"> -->
+    <!--       <to>next</to> -->
+    <!--     </action> -->
+    <!--   </mousebind> -->
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
@@ -804,12 +804,6 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <application title="Unnamed Window" type="normal">
-      <desktop>2</desktop>
-      <skip_taskbar>yes</skip_taskbar>
-      <decor>no</decor>
-      <maximized>yes</maximized>
-    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.

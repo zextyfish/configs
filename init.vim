@@ -31,11 +31,11 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
-Plug 'gruvbox-community/gruvbox'
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'arcticicestudio/nord-vim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 "Keyboard Shortcuts
@@ -85,3 +85,5 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+set mouse=a
